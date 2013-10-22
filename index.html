@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Slider</title>
+  <link rel="stylesheet" href="stylesheets/screen.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="scripts/polyfiller.js"></script>
+  <script>$.webshims.polyfill();</script>
+</head>
+<body>
+  <header class="wrap border-bottom-thick">
+    <h1 class="center">Responsive CSS Slider</h1>
+  </header>
+  <p class="wrap border-bottom-thin">This is a completely CSS-based, responsive slider.  Its a cleaned-up, leaner, more svelte version of my previous CSS slider.  In this version I've used SCSS to create an external library for most of the slider controls/logic and I've left only styling to be done in the main css file.</p>
+  <div class="slider">
+    <input type="radio" name="controls" id="slide1" checked>
+    <input type="radio" name="controls" id="slide2">
+    <input type="radio" name="controls" id="slide3">
+    <div class="frame">
+      <div class="slides">
+        <div id="content1" class="slide">
+          <h2 class="center">One</h2>
+          <p class="wrap">The nice thing about this slider is that it's completely content-agnostic, though if you want to have a background it looks best if you give the slides a fixed height!</p>
+        </div>
+        <div id="content2" class="slide">
+          <h2 class="center">Two</h2>
+          <p class="wrap">That means you can put anything in here! Like pictures!</p>
+          <div class="picture-frame">
+            <img src="http://placekitten.com/600/200" alt="Kittens!">
+          </div>
+          
+        </div>
+        <div id="content3" class="slide">
+          <h2 class="center">Three</h2>
+          <p class="wrap">I think that's pretty fancy, don't you?</p>
+        </div>
+      </div>
+    </div>
+    <div class="controls">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+    </div>
+    <div class="active">
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+    </div>
+  </div>
+  
+  <div class="clear"></div>
+  <p class="wrap center">
+    Links to the <a href="sass/screen.scss">Main SCSS file</a> and the <a href="sass/_slider.scss">Slider SCSS file.</a>
+  </p>
+</body>
+</html>

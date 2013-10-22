@@ -1,0 +1,71 @@
+@import "grid";
+@import "borderbox";
+@import "slider";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+* {
+  @extend %borderbox;
+  margin:0;
+  padding:0;
+  border:none;
+  outline:none;
+  font-family:'Open Sans', sans-serif;
+}
+h1 {
+  font-size:3em;
+  margin:30px 5px;
+}
+h2 {
+  font-size:4em;
+  margin:20px;
+}
+p {
+  padding:10px;
+}
+.active {
+  width:50px;
+}
+.border-bottom-thick {
+  border-bottom:rgba(0,0,0,.1) solid 2px;
+}
+.border-bottom-thin {
+  border-bottom:rgba(0,0,0,.1) solid 1px; 
+}
+.clear {
+  clear:both;
+}
+.center {
+  text-align: center;
+}
+.controls {
+  position:relative;
+  top:-220px
+}
+.frame {
+  box-shadow:
+    0px 4px 10px rgba(0,0,0,.2),
+    0px -4px 10px rgba(0,0,0,.2)
+  ;
+}
+.picture-frame {
+  max-width:600px;
+  margin:0 auto;
+}
+.slide {
+  width:33.33333333333333333%;
+  height:400px;
+  background:url(../dark_leather.png);
+  p,h1,h2 {
+    color:white;
+    text-shadow:
+      0px 2px 1px rgba(255,255,255,0.4),
+      0px -2px 1px rgba(0,0,0,0.4)
+    ;
+  }
+}
+.slides {
+  width:300%;
+}
+.wrap {
+  margin:0 auto;
+  width:85%;
+}

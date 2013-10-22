@@ -1,0 +1,109 @@
+// Button Logic
+
+@for $i from 1 through 10 {
+  #slide#{$i}:checked ~ .frame .slides {
+    margin-left:(-#{($i - 1)*100%});
+    -webkit-transition:all ease .7s;
+    -moz-transition:all ease .7s;
+    -o-transition:all ease .7s;
+  }
+}
+
+// right Arrow
+
+@for $i from 1 through 10 {
+  #slide#{$i}:checked ~ .controls label[for="slide#{$i + 1}"] {
+    display:block;
+    float:right;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHElEQVQYlWNggIKvX7/+h2EGQmCoKSZK4SBTBAAEaHQF+ACn0wAAAABJRU5ErkJggg==), #232323;
+    background-repeat:no-repeat, repeat;
+    background-position:center center;
+    height:50px;
+    width:50px;
+  }
+}
+// Loop condition
+ #slide3:checked ~ .controls label[for="slide1"] {
+    display:block;
+    float:right;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHElEQVQYlWNggIKvX7/+h2EGQmCoKSZK4SBTBAAEaHQF+ACn0wAAAABJRU5ErkJggg==), #232323;
+    background-repeat:no-repeat, repeat;
+    background-position:center center;
+    height:50px;
+    width:50px;
+  }
+// Left Arrow
+// loop condition
+#slide1:checked ~ .controls label[for="slide3"] {
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAG0lEQVQYlWNgQANfv379D8PocoNaEUkKh4BiAKS1dAUutz8GAAAAAElFTkSuQmCC), #232323;
+    background-repeat: no-repeat, repeat;
+    background-position: center center;
+    float: left;
+    display: block;
+    height:50px;
+    width:50px;
+}
+
+@for $i from 2 through 10 {
+  #slide#{$i}:checked ~ .controls label[for="slide#{$i - 1}"] {
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAG0lEQVQYlWNgQANfv379D8PocoNaEUkKh4BiAKS1dAUutz8GAAAAAElFTkSuQmCC), #232323;
+    background-repeat: no-repeat, repeat;
+    background-position: center center;
+    float: left;
+    display: block;
+    height:50px;
+    width:50px;
+  }
+}
+
+// "Radio buttons"
+
+@for $i from 1 through 10 {
+  #slide#{$i}:checked ~ .active label[for="slide#{$i}"] {
+    background:#333;
+  }
+}
+
+.active {
+  margin:1em auto;
+  label {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    float:left;
+    width:10px;
+    height: 10px;
+    background: #bbb;
+    margin:2px;
+    &:hover {
+      background:#ccc;
+      border-color:#777;
+    }
+  }
+}
+  
+
+.controls {
+  label {
+    opacity:0.4;
+    &:hover {
+      opacity:.8;
+    }
+  }
+}
+
+input[name="controls"] {
+  display:none;
+}
+
+.frame {
+  width:100%;
+  overflow:hidden;
+}
+
+.slide {
+  float:left;
+  img {
+    max-width:100%;
+  }
+}
